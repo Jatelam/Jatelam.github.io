@@ -1,7 +1,7 @@
 # agile-ts.org
 
 <div align="center">
-  <a href="https://agile-ts.org">
+  <a href="jatelam.github.io">
     <img src=".github/static/landing.png"/>
   </a>
 </div>
