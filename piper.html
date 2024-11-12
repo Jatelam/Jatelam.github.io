@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr" class="docs-wrapper plugin-docs plugin-id-piper docs-version-current docs-doc-page docs-doc-id-quickly" data-has-hydrated="false">
+<head>
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.5.2">
+<title data-rh="true">PiPER 快速使用手册 V1.0 | Agilex NAVIS API</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://jatelam.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://jatelam.github.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://jatelam.github.io/piper"><meta data-rh="true" property="og:locale" content="zh_Hans"><meta data-rh="true" name="docusaurus_locale" content="zh-Hans"><meta data-rh="true" name="docsearch:language" content="zh-Hans"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-piper-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-piper-current"><meta data-rh="true" property="og:title" content="PiPER 快速使用手册 V1.0 | Agilex NAVIS API"><meta data-rh="true" name="description" content="PiPER"><meta data-rh="true" property="og:description" content="PiPER"><link data-rh="true" rel="icon" href="/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://jatelam.github.io/piper"><link data-rh="true" rel="alternate" href="https://jatelam.github.io/piper" hreflang="zh-Hans"><link data-rh="true" rel="alternate" href="https://jatelam.github.io/piper" hreflang="x-default"><link rel="alternate" type="application/rss+xml" href="/blog/rss.xml" title="Agilex NAVIS API RSS Feed">
+<link rel="alternate" type="application/atom+xml" href="/blog/atom.xml" title="Agilex NAVIS API Atom Feed"><link rel="stylesheet" href="/assets/css/styles.e537e903.css">
+<script src="/assets/js/runtime~main.d30991f4.js" defer="defer"></script>
+<script src="/assets/js/main.eff19ea7.js" defer="defer"></script>
+</head>
+<body class="navigation-with-keyboard">
+<script>!function(){function t(t){document.documentElement.setAttribute("data-theme",t)}var e=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();t(null!==e?e:"light")}(),function(){try{const n=new URLSearchParams(window.location.search).entries();for(var[t,e]of n)if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id="__docusaurus"><div role="region" aria-label="跳到主要内容"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">跳到主要内容</a></div><nav aria-label="主导航" class="navbar navbar--fixed-top"><div class="navbar__inner"><div class="navbar__items"><button aria-label="切换导航栏" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="My Site Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div></a><a class="navbar__item navbar__link" href="/navis">Navis</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/piper">Piper</a></div><div class="navbar__items navbar__items--right"><a href="https://github.com/agilexrobotics" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="切换浅色/暗黑模式（当前为浅色模式）" aria-label="切换浅色/暗黑模式（当前为浅色模式）" aria-live="polite"><svg viewBox="0 0 24 24" width="24" height="24" class="lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" class="darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="main-wrapper mainWrapper_z2l0"><div class="docsWrapper_hBAB"><button aria-label="回到顶部" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type="button"></button><div class="docRoot_UBD9"><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class="sidebarViewport_aRkj"><div class="sidebar_njMd"><nav aria-label="文档侧边栏" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-1 menu__list-item"><a class="menu__link menu__link--active" aria-current="page" href="/piper">PiPER 快速使用手册 V1.0</a></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/piper/piper/intro">PiPER 简介</a></div></li><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item menu__list-item--collapsed"><div class="menu__list-item-collapsible"><a class="menu__link menu__link--sublist menu__link--sublist-caret" role="button" aria-expanded="false" href="/piper/piper/hardwarm">PiPER 使用</a></div></li></ul></nav><button type="button" title="收起侧边栏" aria-label="收起侧边栏" class="button button--secondary button--outline collapseSidebarButton_PEFL"><svg width="20" height="20" aria-hidden="true" class="collapseSidebarButtonIcon_kv0_"><g fill="#7a7a7a"><path d="M9.992 10.023c0 .2-.062.399-.172.547l-4.996 7.492a.982.982 0 01-.828.454H1c-.55 0-1-.453-1-1 0-.2.059-.403.168-.551l4.629-6.942L.168 3.078A.939.939 0 010 2.528c0-.548.45-.997 1-.997h2.996c.352 0 .649.18.828.45L9.82 9.472c.11.148.172.347.172.55zm0 0"></path><path d="M19.98 10.023c0 .2-.058.399-.168.547l-4.996 7.492a.987.987 0 01-.828.454h-3c-.547 0-.996-.453-.996-1 0-.2.059-.403.168-.551l4.625-6.942-4.625-6.945a.939.939 0 01-.168-.55 1 1 0 01.996-.997h3c.348 0 .649.18.828.45l4.996 7.492c.11.148.168.347.168.55zm0 0"></path></g></svg></button></div></div></aside><main class="docMainContainer_TBSr"><div class="container padding-top--md padding-bottom--lg"><div class="row"><div class="col docItemCol_VOVn"><div class="docItemContainer_Djhp"><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label="页面路径"><ul class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList"><li class="breadcrumbs__item"><a aria-label="主页面" class="breadcrumbs__link" href="/"><svg viewBox="0 0 24 24" class="breadcrumbHomeIcon_YNFT"><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill="currentColor"></path></svg></a></li><li itemscope="" itemprop="itemListElement" itemtype="https://schema.org/ListItem" class="breadcrumbs__item breadcrumbs__item--active"><span class="breadcrumbs__link" itemprop="name">PiPER 快速使用手册 V1.0</span><meta itemprop="position" content="1"></li></ul></nav><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type="button" class="clean-btn tocCollapsibleButton_TO0P">本页总览</button></div><div class="theme-doc-markdown markdown"><header><h1>PiPER 快速使用手册 V1.0</h1></header>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="piper">PiPER<a href="#piper" class="hash-link" aria-label="PiPER的直接链接" title="PiPER的直接链接">​</a></h3>
+<p><img decoding="async" loading="lazy" src="/assets/images/1km4nrqu-b19123efb0596183abf55b4ed1124c56.png" width="492" height="606" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="重要安全信息">重要安全信息<a href="#重要安全信息" class="hash-link" aria-label="重要安全信息的直接链接" title="重要安全信息的直接链接">​</a></h3>
+<p>本章包含重要的安全信息，在第一次通电前，任何个人或者机构在使用设备之前必须阅读并理解这些信息。有任何相关使
+用的疑问都可以联系我们<a href="mailto:support@agilex.ai" target="_blank" rel="noopener noreferrer">support@agilex.ai</a>，必须遵守并执行本手册其他章节中的所有组装说明和指南，这一点非常重要。
+应特别注意与警告标志相关的文本。</p>
+<ul>
+<li>
+<p><strong>警告标识</strong>：⚠这指的是可能引发危险的情况，如果不避免，可导致人员伤害或设备严重损坏。</p>
+</li>
+<li>
+<p><strong>警告</strong>⚠：如果机械臂以任何方式被损坏、更改或修改，松灵机器人拒绝承担所有责任。松灵机器人对由于程序出错或
+机械臂故障而对机械臂或任何其他设备造成的任何损坏概不负责。</p>
+</li>
+<li>
+<p><strong>责任限制</strong>：本手册所包含的任何安全信息都不得视为松灵机器人的保证，即使机械臂遵守所有安全说明，依然有可
+能引起伤害或损坏。
+本手册中的信息不包含设计、安装和操作一个完整的机械臂应用，也不包含所有可能对这一完整的系统的安全造成影响的
+周边设备。该完整的系统的设计和使用需要符合该机械臂安装所在国的标准和规范中确立的安全要求。
+机械臂的集成商和终端客户有责任确保遵循相关规定和切实的法律法规，确保完整的机械臂应用实例中不存在任何重大危
+险。</p>
+<ul>
+<li>
+<p>这包括但不限于以下内容：</p>
+</li>
+</ul>
+<ol>
+<li>有效性和责任<!-- -->
+<ul>
+<li>对完整的机械臂系统做一个风险评估。</li>
+<li>将风险评估定义的其他机械的附加安全设备连接在一起。</li>
+<li>确认整个机械臂系统包括软件和硬件系统的设计和安装准确无误。</li>
+<li>本机械臂相关功能需要集成商和终端客户遵循相关规定和切实可行的法律法规进行安全评估，确保开发完成的机械臂</li>
+<li>在实际应用中不存在任何重大危险和安全隐患。</li>
+<li>在操作和使用设备之前已经知晓可能存在的安全风险。</li>
+<li>确保用户不会对任何安全措施加以修改</li>
+<li>收集技术文件中的所有文档；包括风险评估和本手册</li>
+</ul>
+</li>
+<li>环境<!-- -->
+<ul>
+<li>首次使用，请先仔细阅读本手册，了解基本操作内容与操作规范。</li>
+<li>选择相对空旷区域使用，机械臂本身是不带任何自动避障传感器。</li>
+<li>在- 20 °C~50°C的环境温度中使用。</li>
+<li>如果机械臂非单独定制IP防护等级，机械臂防水、防尘能力为IP22。</li>
+</ul>
+</li>
+<li>检查<!-- -->
+<ul>
+<li>确保机械臂无明显异常。</li>
+<li>使用时确保线束连接正常。</li>
+</ul>
+</li>
+<li>操作<!-- -->
+<ul>
+<li>保证操作时周围区域相对空旷。</li>
+<li>在视距内控制。</li>
+<li>机械臂最大的载重为1.5KG，在使用时，确保有效载荷不超过1.5KG。</li>
+<li>当设备出现异常时，请立即停止使用，避免造成二次伤害。</li>
+<li>当设备出现异常时，请联系相关技术人员，请勿擅自处理。</li>
+<li>请根据设备的IP防护等级在满足防护等级要求的环境中使用。</li>
+</ul>
+</li>
+<li>使用警告⚠：<!-- -->
+<ul>
+<li>确保机械臂和工具/末端执行器始终都正确并稳固地固定在位。</li>
+<li>不得不进 入机械臂工作空间时，必须佩戴护目镜、防护</li>
+<li>确保机械臂有足够的空间来自由活动。</li>
+<li>确保已按照风险评估中所定义的建立安全措施。</li>
+<li>操作机械臂时请不要穿宽松的衣服。操作机械臂时请确保长头发束在脑后。</li>
+<li>如果机械臂已损坏或有任何异常，请勿使用。</li>
+<li>如果上位机软件提示错误信息，请迅速进行紧急停止，联系相关技术人员。</li>
+<li>确保警告人们的头和脸或者其他身体部分保持在正在操作的机械臂或即将开始操作的机械臂可触及的范围之外。</li>
+<li>切勿改动机械臂。对机械臂的改动有可能造成集成商无法预测的危险。</li>
+<li>不要将机械臂一直暴露在永久性磁场。强磁场可损坏机械臂。</li>
+</ul>
+</li>
+</ol>
+<p>● 机械臂在操作过程中会产生热量。机械臂正在操作时或刚停止操作时，请不要操纵或触摸机械臂，因为长时间接触可
+能引起不适。切断电源并等待一小时，机械臂才可冷却下来。
+● 将不同的机械连接起来可能加重危险或引发新的危险。始终对整个安装进行全面的风险评估。根据风险评估，不同的
+功能安全等级可能适用；因此当需要不同的安全和紧急停止性能等级时，始终选择最高的性能等级。始终都要阅读和
+理解安装中使用到的所有设备的手册。</p>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="1-机械臂-简介">1. 机械臂 简介<a href="#1-机械臂-简介" class="hash-link" aria-label="1. 机械臂 简介的直接链接" title="1. 机械臂 简介的直接链接">​</a></h3>
+<p>该六自由度机械臂是专为教育科研行业、消费级应用场景、工业自动化设计，具备1.5kg的负载能力，适用于人形机器人、自动装配、自动搬运等多种科研及工业应用场景。六个旋转关节提供了全方位的操作灵活性，确保高精度和重复性。机械  臂采用模块化设计，便于维护和升级。提供直观的用户界面，简化编程和操作流程，即使是非专业人士也能快速上手。可以广泛应用于科学研究、教育教学、汽车制造、电子组装、食品加工、实验室自动化和医疗设备操作等领域
+。
+h</p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="11-包装清单">1.1. 包装清单<a href="#11-包装清单" class="hash-link" aria-label="1.1. 包装清单的直接链接" title="1.1. 包装清单的直接链接">​</a></h4>
+<table><thead><tr><th style="text-align:left">  名称          </th><th style="text-align:left">   数量       </th></tr></thead><tbody><tr><td style="text-align:left">  6自由度机械臂         </td><td style="text-align:left">     1 </td></tr><tr><td style="text-align:left">  USB转CAN模块     </td><td style="text-align:left">  1    </td></tr><tr><td style="text-align:left">  电源适配器     </td><td style="text-align:left">  1    </td></tr><tr><td style="text-align:left">  MicroUSB线     </td><td style="text-align:left">  1    </td></tr><tr><td style="text-align:left">  供电通讯线     </td><td style="text-align:left">  1    </td></tr><tr><td style="text-align:left">  底座固定螺丝     </td><td style="text-align:left">  4    </td></tr><tr><td style="text-align:left">  底座安装扳手     </td><td style="text-align:left">  1    </td></tr></tbody></table>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="2-基本使用">2. 基本使用<a href="#2-基本使用" class="hash-link" aria-label="2. 基本使用的直接链接" title="2. 基本使用的直接链接">​</a></h3>
+<p>该机械臂具备 6 自由度，1.5k末端负载，六个旋转关节提供了全方位的操作灵活性，确保高精度和重复性。采用了轻量化的设计，使得机械臂具备快速运动能力的同时兼具较高的负载能力，可以广泛应用于具身智能方向真实场景数据采
+集。
+<img decoding="async" loading="lazy" src="/assets/images/5qqnpxwy-7d30b37807b9828aa66f72c0f74b4ce5.png" width="592" height="523" class="img_ev3q"></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="21-电气接口使用说明">2.1. 电气接口使用说明<a href="#21-电气接口使用说明" class="hash-link" aria-label="2.1. 电气接口使用说明的直接链接" title="2.1. 电气接口使用说明的直接链接">​</a></h4>
+<p><img decoding="async" loading="lazy" src="/assets/images/xuzaekth-176ea0565a9fffedcebf9f41f9c07ddf.png" width="1441" height="389" class="img_ev3q"></p>
+<ul>
+<li>
+<p>数字含义
+1: 供电通讯口
+2: 状态指示灯
+3: J1J2连接口
+4 ：供电正
+5 ：供电负
+6 ：CAN-H
+7 ：CAN-L</p>
+<p><strong>注意</strong>：红点朝向与下面线缆红点对应，航插带纹路部位为受力向后可收缩区域，在安装时红点向下对准凸点直接插入即可，拔出时在纹路部分按下后拔出即可。</p>
+</li>
+<li>
+<p>can连接与准备:
+将插头CAN线引出，将CAN线中的CAN_H和CAN_L分别与CAN_TO_USB适配器相连；
+将CAN_TO_USB连接至笔记本的usb口。连接示意如图3.4所示。
+**注意:**如果使用的非标配充电器，电源输入不得超过26V，电流不小于10A。</p>
+</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="example-subsection-1-c">2.2. 机械臂示教使用说明<a href="#example-subsection-1-c" class="hash-link" aria-label="2.2. 机械臂示教使用说明的直接链接" title="2.2. 机械臂示教使用说明的直接链接">​</a></h4>
+<p>械臂拖动示教状态可通过 J5与J6 之间的按钮指示灯表现。
+机械臂状态灯光显示有三种：</p>
+<ol>
+<li>
+<p>无灯光显示：机械臂拖动示教停止状态/机械臂拖动记录结束状态。
+<img decoding="async" loading="lazy" src="/assets/images/u0sourry-22e824c66fd59be23f13eb03997d3ae0.png" width="473" height="208" class="img_ev3q"></p>
+</li>
+<li>
+<p>绿色灯光常量：机械臂进入拖动示教轨迹记录状态。
+<img decoding="async" loading="lazy" src="/assets/images/2v1xtowx-4cafd5a7c78877d1e14966e9052ebe88.png" width="460" height="168" class="img_ev3q"></p>
+</li>
+<li>
+<p>绿色灯光闪烁：机械臂进入拖动示教轨迹复现状态。</p>
+</li>
+</ol>
+<p><strong>切换拖动状态操作方法:</strong></p>
+<ul>
+<li>1 、单击按钮：用于切换拖动示教轨迹记录状态和拖动记录结束状态。</li>
+<li>2 、双击按钮：拖动示教轨迹复现状态。</li>
+</ul>
+<p><strong>使用说明:</strong>
+首先观察指示灯状态</p>
+<ul>
+<li>1 、如果指示灯为无灯光显示，可单击按钮，此时绿色灯光应常亮，用户可直接拖动机械臂，表示进入轨迹记录状态，开
+始轨迹记录。</li>
+<li>2 、如果指示灯为无灯光显示，并且在此之前有操作轨迹记录，可双击按钮，此时绿色灯光以500ms闪烁，表示进入轨迹复
+现状态，机械臂会复现一次记录的轨迹动作。</li>
+<li>3 、如果灯光为常亮显示，表示正在进行轨迹记录，如果需要结束记录，可单击按钮，此时灯光应为不亮状态，表示进入
+记录结束状态，如果想复现轨迹请按照 2 操作。</li>
+<li>4 、如果灯光为闪烁状态，表示正在进行轨迹复现。</li>
+</ul>
+<p><strong>注意事项:</strong></p>
+<ul>
+<li>1 、轨迹复现过程，用户需与机械臂保持安全距离，注意安全，谨防被机械臂误伤。</li>
+<li>2 、机械臂每次进入示教轨迹记录状态，都会把前一段记录的轨迹清除，轨迹复现状态会以最新记录的轨迹为复现轨迹。</li>
+<li>3 、轨迹记录最长时间为 3 分钟，超过最长记录时间的轨迹无效。</li>
+<li>4 、使用完拖动示教后，需确保指示灯为长灭/拖动示教停止状态。</li>
+<li>5 、若需要再进行上位机运动控制或指令控制，需要确保指示灯为长灭/拖动示教停止状态，后通过上位机切换操作模式进
+入待机后，再将待机模式切换为can模式；指令控制亦是如此，发送控制模式为待机模式，再发送控制模式为can控制模式
+。</li>
+</ul>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="23-底座安装说明">2.3. 底座安装说明<a href="#23-底座安装说明" class="hash-link" aria-label="2.3. 底座安装说明的直接链接" title="2.3. 底座安装说明的直接链接">​</a></h4>
+<p>机械臂底座安装使用螺丝固定方式，底座预留 4 个M5螺纹通孔，配件包内有附带 4 个M5螺丝，可使用附带六角工具进行固定。孔位间距均为 70 mm，如需在移动设备或固定台面设计对应结构件转接，可设计孔间距70mm的位置。
+<img decoding="async" loading="lazy" src="/assets/images/xioibh5s-0567bb22c2d73577278a7fad88e86e35.png" width="902" height="734" class="img_ev3q"></p>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="24-末端工具安装说明">2.4. 末端工具安装说明<a href="#24-末端工具安装说明" class="hash-link" aria-label="2.4. 末端工具安装说明的直接链接" title="2.4. 末端工具安装说明的直接链接">​</a></h4>
+<p>末端可以通过法兰安装其他工具，可选配配件有两指夹爪与示教器，安装方法如下图所示，两指夹爪与示教器参数详见附件一：选配末端工具参数。
+<img decoding="async" loading="lazy" src="/assets/images/gzlpywfe-180a8b7ea4e84626bcd50fb3c86e61af.png" width="553" height="480" class="img_ev3q"><img decoding="async" loading="lazy" src="/assets/images/m1y2hjde-9c668e034675a392864331a4453e591c.png" width="693" height="457" class="img_ev3q"></p>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="3-armrobotua-上位机使用说明">3. ArmRobotUA 上位机使用说明<a href="#3-armrobotua-上位机使用说明" class="hash-link" aria-label="3. ArmRobotUA 上位机使用说明的直接链接" title="3. ArmRobotUA 上位机使用说明的直接链接">​</a></h3>
+<p>软件下载：
+链接: <a href="https://pan.baidu.com/s/1EJf_6QqxdC7NzBqsBhjt2w?pwd=y8gg" target="_blank" rel="noopener noreferrer">https://pan.baidu.com/s/1EJf_6QqxdC7NzBqsBhjt2w?pwd=y8gg</a> 提取码: y8gg
+通过win7以上版本的pc，双击打开上位机软件，通过此人机交互软件，可以操作机械臂本体和读取机械臂外网反馈数据内容。</p>
+<ul>
+<li>用户操作界面如下:<!-- -->
+<ul>
+<li><img decoding="async" loading="lazy" alt="上位机软件桌面图标" src="/assets/images/wfc0bntx-571b1c3e006e1aa4cd2fa0d484292451.png" width="170" height="154" class="img_ev3q"></li>
+</ul>
+</li>
+<li>上位机操作界面:<!-- -->
+<ul>
+<li>
+<p><img decoding="async" loading="lazy" alt="上位机操作界面" src="/assets/images/nnho1yrn-45fa1baa24cb391f337496d04d9275e8.png" width="1266" height="754" class="img_ev3q"></p>
+</li>
+<li>
+<p>上位机软件面板各功能区域名称</p>
+<table><thead><tr><th style="text-align:left"> 序号</th><th style="text-align:left">名称          </th></tr></thead><tbody><tr><td style="text-align:left">1</td><td style="text-align:left">机械臂通讯按钮</td></tr><tr><td style="text-align:left">2</td><td style="text-align:left">垂直菜单栏选项</td></tr><tr><td style="text-align:left">3</td><td style="text-align:left">速度百分比设置</td></tr><tr><td style="text-align:left">4</td><td style="text-align:left">机械臂使能按钮</td></tr><tr><td style="text-align:left">5</td><td style="text-align:left">机械臂急停按钮</td></tr><tr><td style="text-align:left">6</td><td style="text-align:left">窗口缩放、关闭按钮</td></tr><tr><td style="text-align:left">7</td><td style="text-align:left">操作功能区</td></tr><tr><td style="text-align:left">8</td><td style="text-align:left">3D仿真模型</td></tr><tr><td style="text-align:left">9</td><td style="text-align:left">轨迹库功能</td></tr><tr><td style="text-align:left">10</td><td style="text-align:left">机械臂关节状态</td></tr><tr><td style="text-align:left">11</td><td style="text-align:left">机械臂状态栏</td></tr></tbody></table>
+</li>
+</ul>
+</li>
+</ul>
+<h3 class="anchor anchorWithStickyNavbar_LWe7" id="4-二次开发">4. 二次开发<a href="#4-二次开发" class="hash-link" aria-label="4. 二次开发的直接链接" title="4. 二次开发的直接链接">​</a></h3>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="机械臂的二次开发目前提供基于python的sdk与ros-1-驱动包机械臂详细二次开发请参照github链接">机械臂的二次开发目前提供基于python的sdk与ros 1 驱动包。机械臂详细二次开发请参照github链接。<a href="#机械臂的二次开发目前提供基于python的sdk与ros-1-驱动包机械臂详细二次开发请参照github链接" class="hash-link" aria-label="机械臂的二次开发目前提供基于python的sdk与ros 1 驱动包。机械臂详细二次开发请参照github链接。的直接链接" title="机械臂的二次开发目前提供基于python的sdk与ros 1 驱动包。机械臂详细二次开发请参照github链接。的直接链接">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="sdk"><a href="https://github.com/agilexrobotics/piper_sdk" target="_blank" rel="noopener noreferrer">SDK</a><a href="#sdk" class="hash-link" aria-label="sdk的直接链接" title="sdk的直接链接">​</a></h4>
+<h4 class="anchor anchorWithStickyNavbar_LWe7" id="ros1"><a href="https://github.com/agilexrobotics/piper_ros" target="_blank" rel="noopener noreferrer">ROS1</a><a href="#ros1" class="hash-link" aria-label="ros1的直接链接" title="ros1的直接链接">​</a></h4></div><footer class="theme-doc-footer docusaurus-mt-lg"><div class="row margin-top--sm theme-doc-footer-edit-meta-row"><div class="col"><a href="https://github.com/Jatelam/jatelam.github.io/docs/piper/quickly.md" target="_blank" rel="noopener noreferrer" class="theme-edit-this-page"><svg fill="currentColor" height="20" width="20" viewBox="0 0 40 40" class="iconEdit_Z9Sw" aria-hidden="true"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>  编辑此页</a></div><div class="col lastUpdated_JAkA"></div></div></footer></article><nav class="pagination-nav docusaurus-mt-lg" aria-label="文件选项卡"><a class="pagination-nav__link pagination-nav__link--next"><div class="pagination-nav__sublabel">下一页</div><div class="pagination-nav__label">PiPER 简介</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href="#piper" class="table-of-contents__link toc-highlight">PiPER</a></li><li><a href="#重要安全信息" class="table-of-contents__link toc-highlight">重要安全信息</a></li><li><a href="#1-机械臂-简介" class="table-of-contents__link toc-highlight">1. 机械臂 简介</a></li><li><a href="#2-基本使用" class="table-of-contents__link toc-highlight">2. 基本使用</a></li><li><a href="#3-armrobotua-上位机使用说明" class="table-of-contents__link toc-highlight">3. ArmRobotUA 上位机使用说明</a></li><li><a href="#4-二次开发" class="table-of-contents__link toc-highlight">4. 二次开发</a></li></ul></div></div></div></div></main></div></div></div><footer class="footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="col footer__col"><div class="footer__title">Docs</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/navis">Navis</a></li></ul></div><div class="col footer__col"><div class="footer__title">Agilex Robotics</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://www.agilex.ai" target="_blank" rel="noopener noreferrer" class="footer__link-item">Agilex Robotics<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div><div class="col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/agilexrobotics" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-hidden="true" viewBox="0 0 24 24" class="iconExternalLink_nPIU"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path></svg></a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2024 My Project, Inc. Built with Docusaurus.</div></div></div></footer></div>
+</body>
+</html>
